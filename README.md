@@ -1,6 +1,7 @@
 # Shell-Scripts
 mkpics - Writes to standard output HTML code that displace a table of photos. The first command line argument is the number of columns in the table, and remaining arguments are the files to be displayed.
 For example:
+
 !DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
@@ -28,6 +29,7 @@ filepics - Takes an existing directory as an argument, for each picture in the d
 
 mkpics2 - A modified mkpics, takes number of columns and a directory as an argument. The directory should be the root of a folder that had filepics run on it. It then outputs HTML code with a table of photos for each year.
 For example:
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
