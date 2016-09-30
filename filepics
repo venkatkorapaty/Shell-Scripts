@@ -1,0 +1,31 @@
+#!/bin/sh
+PATH=$PATH:/courses/webspace/cscb09w16/bin
+
+if [ "$1" = . ] ; then
+	currDir=*/.jpg
+else
+	currDir=$1/*.jpg
+fi
+
+for i in $currDir
+do
+	time=`exiftime -tg $i`
+	year=$(echo $time | cut -c18-21)
+	month=$(echo $time | cut -c23-24)
+	# if year folder already exists
+	if [ -d "$1/$year" ] ; then
+		# if month folder already exists
+		if [ -d "$1/$year/$month" ] ; then
+			`mv $i $1/$year/$month`
+		# if month does not exist
+		else
+			`mkdir $1/$year/$month`
+			`mv $i $1/$year/$month`
+		fi
+	# if year does not exist
+	else
+		`mkdir $1/$year`
+		`mkdir $1/$year/$month`
+		`mv $i $1/$year/$month`
+	fi
+done
